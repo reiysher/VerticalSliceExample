@@ -22,7 +22,7 @@ public sealed class DeleteAuthor
             return await sender.Send(request, cancellationToken);
         }
     }
-    
+
     public sealed record Request(Guid AuthorId) : IRequest<IResult>;
 
     public sealed class Handler(ApplicationDbContext dbContext, IBus _bus) : IRequestHandler<Request, IResult>
@@ -43,7 +43,7 @@ public sealed class DeleteAuthor
             await dbContext.SaveChangesAsync(cancellationToken);
 
             await _bus.Publish(new AuthorDeleted(author.Id), cancellationToken);
-            
+
             return Results.NoContent();
         }
     }

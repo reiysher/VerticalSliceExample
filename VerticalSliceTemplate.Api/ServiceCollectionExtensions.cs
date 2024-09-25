@@ -13,14 +13,14 @@ public static class ServiceCollectionExtensions
 
         services
             .AddSingleton(TimeProvider.System);
-        
+
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-        
+
         services.AddScoped<ICurrentUserService, CurrentUserService>();
-        
+
         return services;
     }
-    
+
     public static IServiceCollection RegisterPersistence(
         this IServiceCollection services,
         IConfiguration configuration)
@@ -28,18 +28,18 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<ApplicationDbContext>((_, options) =>
         {
             string connectionString = configuration.GetConnectionString("Default")!;
-            
+
             options.UseSqlite(connectionString, builder =>
             {
                 builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName);
                 builder.MigrationsHistoryTable("ef_migration_history");
             });
         });
-        
+
         return services;
     }
-    
-    
+
+
 
     public static async Task InitializeDatabase(
         this IServiceProvider services,

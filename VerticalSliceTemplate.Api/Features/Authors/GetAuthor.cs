@@ -22,7 +22,7 @@ public static class GetAuthor
     }
 
     public sealed record Request(Guid AuthorId) : IRequest<IResult>;
-    
+
     public sealed class Handler(ApplicationDbContext dbContext) : IRequestHandler<Request, IResult>
     {
         public async Task<IResult> Handle(Request request, CancellationToken cancellationToken)
@@ -36,7 +36,7 @@ public static class GetAuthor
             {
                 return Results.NotFound();
             }
-            
+
             string?[] items =
             [
                 author.FirstName, author.LastName, author.MiddleName

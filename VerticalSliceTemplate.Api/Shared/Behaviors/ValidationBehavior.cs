@@ -6,7 +6,7 @@ public class ValidationBehavior<TRequest, IResult>
     (IEnumerable<IValidator<TRequest>> validators) : IPipelineBehavior<TRequest, IResult>
     where TRequest : IRequest<IResult>
 {
-    public async Task<IResult> Handle(TRequest request, 
+    public async Task<IResult> Handle(TRequest request,
         RequestHandlerDelegate<IResult> next, CancellationToken cancellationToken)
     {
         if (!validators.Any())

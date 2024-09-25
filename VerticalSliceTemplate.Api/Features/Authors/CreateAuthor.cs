@@ -10,6 +10,7 @@ public static class CreateAuthor
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
+
             app.MapPost("authors", Create)
                 .Accepts<Request>(MediaTypeNames.Application.Json)
                 .AllowAnonymous();
@@ -26,7 +27,7 @@ public static class CreateAuthor
 
     // Request
     public sealed record Request(string FirstName, DateTimeOffset BirthDay) : IRequest<IResult>;
-    
+
     // Validator
     public sealed class Validator : AbstractValidator<Request>
     {
@@ -39,7 +40,7 @@ public static class CreateAuthor
                 .NotEmpty();
         }
     }
-    
+
     // Handler
     public sealed class Handler(ApplicationDbContext dbContext, TimeProvider timeProvider)
         : IRequestHandler<Request, IResult>
@@ -65,7 +66,7 @@ public static class CreateAuthor
             return Results.Created($"authors/{author.Id}", authorDto);
         }
     }
-    
+
     // Response
     public sealed record AuthorDto(Guid Id, string FirstName, DateTimeOffset BirthDay);
 }

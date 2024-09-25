@@ -23,7 +23,7 @@ public static class GetNote
     }
 
     public sealed record Request(Guid AuthorId, Guid NoteId) : IRequest<IResult>;
-    
+
     public sealed class Handler(ApplicationDbContext dbContext) : IRequestHandler<Request, IResult>
     {
         public async Task<IResult> Handle(Request request, CancellationToken cancellationToken)

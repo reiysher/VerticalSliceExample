@@ -4,7 +4,7 @@ namespace VerticalSliceTemplate.Api.Shared.Security;
 
 internal sealed class CurrentUserService(IHttpContextAccessor httpContextAccessor)  : ICurrentUserService
 {
-    public Guid? UserId 
+    public Guid? UserId
     {
         get
         {

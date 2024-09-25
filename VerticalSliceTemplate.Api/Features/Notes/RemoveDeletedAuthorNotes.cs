@@ -14,7 +14,7 @@ public static class RemoveDeletedAuthorNotes
             return sender.Send(request, context.CancellationToken);
         }
     }
-    
+
     public sealed class ConsumerDefinition : ConsumerDefinition<Consumer>
     {
         public ConsumerDefinition()
@@ -24,7 +24,7 @@ public static class RemoveDeletedAuthorNotes
     }
 
     public sealed record Request(Guid AuthorId) : IRequest;
-    
+
     public sealed class Handler(ApplicationDbContext dbContext) : IRequestHandler<Request>
     {
         public async Task Handle(Request request, CancellationToken cancellationToken)
