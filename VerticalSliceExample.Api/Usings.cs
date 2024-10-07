@@ -1,0 +1,10 @@
+﻿global using System.Net.Mime;
+global using MediatR;
+global using Microsoft.AspNetCore.Mvc;
+global using VerticalSliceExample.Api.Shared.Endpoints;
+global using VerticalSliceExample.Api.Shared.Persistence;
+global using Microsoft.EntityFrameworkCore;
+global using System.Reflection;
+global using VerticalSliceExample.Api;
+global using VerticalSliceExample.Api.Shared.Messaging;
+global using VerticalSliceExample.Api.Shared.OpenApi;
