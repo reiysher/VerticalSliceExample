@@ -2,6 +2,9 @@
 global using MediatR;
 global using Microsoft.AspNetCore.Mvc;
 global using VerticalSliceTemplate.Api.Shared.Endpoints;
-global using VerticalSliceTemplate.Api.Shared.Domain;
 global using VerticalSliceTemplate.Api.Shared.Persistence;
 global using Microsoft.EntityFrameworkCore;
+global using System.Reflection;
+global using VerticalSliceTemplate.Api;
+global using VerticalSliceTemplate.Api.Shared.Messaging;
+global using VerticalSliceTemplate.Api.Shared.OpenApi;

@@ -1,4 +1,4 @@
-﻿namespace VerticalSliceTemplate.Api.Shared.Domain;
+﻿namespace VerticalSliceTemplate.Api.Shared.Entities;
 
 public sealed class Author
 {

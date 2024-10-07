@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace VerticalSliceTemplate.Api.Shared.Persistence;
+﻿namespace VerticalSliceTemplate.Api.Shared.Persistence;
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
 {

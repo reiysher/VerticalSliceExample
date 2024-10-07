@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using VerticalSliceTemplate.Api.Shared.Entities;
 
 namespace VerticalSliceTemplate.Api.Shared.Persistence.Configurations;
 

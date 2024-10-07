@@ -1,4 +1,6 @@
-﻿namespace VerticalSliceTemplate.Api.Features.Notes;
+﻿using VerticalSliceTemplate.Api.Shared.Entities;
+
+namespace VerticalSliceTemplate.Api.Features.Notes;
 
 public static class GetNote
 {

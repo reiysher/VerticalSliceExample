@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using MassTransit;
+﻿using MassTransit;
 
 namespace VerticalSliceTemplate.Api.Shared.Messaging;
 

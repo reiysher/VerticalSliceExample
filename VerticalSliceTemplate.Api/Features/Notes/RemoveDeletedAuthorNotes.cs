@@ -1,4 +1,5 @@
 ﻿using MassTransit;
+using VerticalSliceTemplate.Api.Shared.Entities;
 using VerticalSliceTemplate.Api.Shared.Messaging.Messges;
 
 namespace VerticalSliceTemplate.Api.Features.Notes;

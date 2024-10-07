@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using FluentValidation;
+﻿using FluentValidation;
 using VerticalSliceTemplate.Api.Shared.Security;
 
 namespace VerticalSliceTemplate.Api;
@@ -38,8 +37,6 @@ public static class ServiceCollectionExtensions
 
         return services;
     }
-
-
 
     public static async Task InitializeDatabase(
         this IServiceProvider services,

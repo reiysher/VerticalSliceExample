@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using VerticalSliceTemplate.Api.Shared.Entities;
 
 namespace VerticalSliceTemplate.Api.Features.Authors;
 

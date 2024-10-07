@@ -1,4 +1,5 @@
 ﻿using MassTransit;
+using VerticalSliceTemplate.Api.Shared.Entities;
 using VerticalSliceTemplate.Api.Shared.Messaging.Messges;
 
 namespace VerticalSliceTemplate.Api.Features.Authors;
@@ -25,7 +26,7 @@ public sealed class DeleteAuthor
 
     public sealed record Request(Guid AuthorId) : IRequest<IResult>;
 
-    public sealed class Handler(ApplicationDbContext dbContext, IBus _bus) : IRequestHandler<Request, IResult>
+    public sealed class Handler(ApplicationDbContext dbContext, IBus bus) : IRequestHandler<Request, IResult>
     {
         public async Task<IResult> Handle(Request request, CancellationToken cancellationToken)
         {
@@ -42,7 +43,7 @@ public sealed class DeleteAuthor
             author.IsDeleted = true;
             await dbContext.SaveChangesAsync(cancellationToken);
 
-            await _bus.Publish(new AuthorDeleted(author.Id), cancellationToken);
+            await bus.Publish(new AuthorDeleted(author.Id), cancellationToken);
 
             return Results.NoContent();
         }

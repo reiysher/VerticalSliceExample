@@ -1,8 +1,3 @@
-using System.Reflection;
-using VerticalSliceTemplate.Api;
-using VerticalSliceTemplate.Api.Shared.Messaging;
-using VerticalSliceTemplate.Api.Shared.OpenApi;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
